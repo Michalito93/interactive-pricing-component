@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Frontend Mentor | Interactive pricing component</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  </head>
+  <body>
+    <main>
+      <div class="title">
+        <img src="images/pattern-circles.svg" alt="circle" />
+        <h1>Simple, traffic-based pricing</h1>
+        <p>
+          Sign-up for our 30-day trial.<br />
+          No credit card required.
+        </p>
+      </div>
+      <div class="main-container">
+        <div class="wrap">
+          <div class="pageviews">
+            <p><span>10K</span> Pageviews</p>
+          </div>
+          <div class="cost">
+            <p>
+              <span class="price">$8.00</span
+              ><span class="duration"> / month</span>
+            </p>
+          </div>
+        </div>
+        <input
+          type="range"
+          name="slider"
+          class="slider"
+          value="0"
+          min="0"
+          max="4"
+        />
+        <div class="billing-container">
+          <span>Monthly Billing</span>
+          <label class="toggle">
+            <input type="checkbox" name="checkbox" class="checkbox" />
+            <span class="btn"></span>
+          </label>
+          <span>Yearly Billing</span>
+          <span class="discount mobile-span">-25%</span
+          ><span class="discount desktop-span">25% discount</span>
+        </div>
+        <div class="list">
+          <ul>
+            <li>
+              <img src="images/icon-check.svg" alt="check" />Unlimited websites
+            </li>
+            <li>
+              <img src="images/icon-check.svg" alt="check" />100% data ownership
+            </li>
+            <li>
+              <img src="images/icon-check.svg" alt="check" />Email reports
+            </li>
+          </ul>
+          <button>Start my trial</button>
+        </div>
+      </div>
+    </main>
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Michalito</a>.
+    </footer>
+    <script src="main.js"></script>
+  </body>
+</html>

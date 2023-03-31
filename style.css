@@ -1,0 +1,350 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 90vh;
+  font-size: 15px;
+  font-family: "Manrope", sans-serif;
+  background: hsl(230, 100%, 99%);
+  background-image: url(images/bg-pattern.svg);
+  background-size: auto 50%;
+  background-repeat: no-repeat;
+  color: hsl(225, 20%, 60%);
+}
+
+main {
+  min-height: 90vh;
+}
+
+.title {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6rem 1.2rem;
+  text-align: center;
+}
+
+.title img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+.title h1 {
+  width: 100%;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: hsl(227, 35%, 25%);
+}
+
+.title p {
+  margin-bottom: 0.3rem;
+}
+
+.main-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 1rem 2rem;
+  padding: 2.5rem 0.5rem;
+  border-radius: 0.8rem;
+  background-color: hsl(0, 0%, 100%);
+  box-shadow: 0 0 20px hsl(90, 4%, 91%);
+}
+
+.pageviews {
+  margin-bottom: 8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.slider {
+  position: absolute;
+  top: 7.8rem;
+  transform: translate(0, -50%);
+  width: 80%;
+}
+
+.cost {
+  margin-bottom: 2rem;
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: hsl(227, 35%, 25%);
+}
+
+/*********** Baseline, reset styles ***********/
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 80%;
+}
+
+/* Removes default focus */
+input[type="range"]:focus {
+  outline: none;
+}
+
+/******** Chrome, Safari, Opera and Edge Chromium styles ********/
+/* slider track */
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: hsl(174, 77%, 80%);
+  border-radius: 0.5rem;
+  height: 0.6rem;
+}
+
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  margin-top: -16px; /* Centers thumb on the track */
+  background-color: hsl(174, 86%, 45%);
+  background-image: url(images/icon-slider.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: 0 10px 30px hsl(174, 86%, 45%);
+  border-radius: 2rem;
+  height: 40px;
+  width: 40px;
+}
+
+input[type="range"]:hover::-webkit-slider-thumb {
+  background-color: hsl(174, 72%, 69%);
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  background-color: hsl(174, 67%, 41%);
+  cursor: grabbing;
+}
+
+input[type="range"]::-webkit-range-progress {
+  background-color: hsl(14, 92%, 95%);
+  height: 0.6rem;
+}
+
+/*********** Firefox styles ***********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+  background-color: hsl(174, 77%, 80%);
+  border-radius: 0.5rem;
+  height: 0.6rem;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+  background-color: hsl(174, 86%, 45%);
+  background-image: url(images/icon-slider.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none; /*Removes extra border that FF applies*/
+  border-radius: 2rem;
+  box-shadow: 5px 0 10px hsl(174, 86%, 45%);
+  height: 40px;
+  width: 40px;
+}
+
+input[type="range"]:hover::-moz-range-thumb {
+  background-color: hsl(174, 72%, 69%);
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+  background-color: hsl(174, 67%, 41%);
+  cursor: grabbing;
+}
+
+input[type="range"]::-moz-range-progress {
+  background-color: hsl(14, 92%, 95%);
+  height: 0.6rem;
+}
+
+.billing-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 4rem;
+}
+
+.billing-container span {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.toggle {
+  position: relative;
+  width: 2.8rem;
+  height: 1.3rem;
+  border-radius: 1.5rem;
+  background-color: hsl(223, 50%, 87%);
+
+  transition: all 0.3s ease;
+}
+
+.toggle:hover {
+  background-color: hsl(174, 86%, 45%);
+}
+
+.checkbox {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.btn {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translate(0, -50%);
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background-color: hsl(0, 0%, 100%);
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.checkbox:checked + .btn {
+  left: 60%;
+}
+
+.discount {
+  padding: 0.2rem 0.5rem;
+  border-radius: 1rem;
+  font-size: 0.7rem;
+  background-color: hsl(14, 92%, 95%);
+  color: hsl(15, 100%, 70%);
+}
+
+.desktop-span {
+  display: none;
+}
+
+ul {
+  margin-bottom: 2rem;
+  text-align: center;
+  list-style: none;
+}
+
+ul img {
+  margin-right: 1rem;
+}
+
+ul li {
+  margin-top: 0.8rem;
+}
+
+button {
+  width: 160px;
+  padding: 0.6rem 0;
+  font-size: 0.8rem;
+  border-radius: 10rem;
+  background-color: hsl(227, 35%, 25%);
+  color: hsl(225, 20%, 60%);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: hsl(228, 30%, 34%);
+}
+
+.attribution {
+  width: 100%;
+  height: 5vh;
+  margin: 0.5rem 0;
+  line-height: 5vh;
+  text-align: center;
+  font-size: 0.8rem;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media (min-width: 800px) {
+  body {
+    background-size: 100% 50%;
+  }
+
+  .title h1 {
+    font-size: 1.8rem;
+  }
+
+  br {
+    display: none;
+  }
+
+  .main-container {
+    width: 750px;
+    margin: 0 auto 10rem;
+  }
+
+  .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 5rem;
+  }
+
+  .pageviews {
+    margin-bottom: 0;
+  }
+  .cost {
+    margin-bottom: 0;
+  }
+
+  .slider {
+    top: 9rem;
+  }
+
+  .billing-container {
+    justify-content: flex-end;
+    margin-right: 5rem;
+  }
+
+  .billing-container span {
+    margin-right: 2rem;
+  }
+
+  .toggle {
+    margin-right: 3rem;
+  }
+
+  .mobile-span {
+    display: none;
+  }
+
+  .desktop-span {
+    display: block;
+  }
+
+  ul {
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  .list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+  }
+}
