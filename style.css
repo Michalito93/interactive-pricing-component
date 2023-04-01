@@ -292,7 +292,7 @@ button:hover {
   }
 
   .main-container {
-    width: 750px;
+    width: 600px;
     margin: 0 auto 10rem;
   }
 
@@ -312,7 +312,7 @@ button:hover {
   }
 
   .slider {
-    top: 9rem;
+    top: 8rem;
   }
 
   .billing-container {
